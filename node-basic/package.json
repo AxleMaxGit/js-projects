@@ -1,18 +1,19 @@
 {
-  "name": "simple-node-website",
-  "version": "0.1.0",
-  "description": "A simple website built with Node, Express and Pug",
-  "main": "server.js",
+  "name": "npm-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": ""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
   },
-  "author": "Alex",
+  "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.3",
-    "pug": "^2.0.3"
+    "express": "^4.17.1",
+    "pug": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "nodemon": "^2.0.6"
   }
 }
