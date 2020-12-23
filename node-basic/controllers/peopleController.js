@@ -7,18 +7,18 @@ exports.homePage = (req, res) => {
     })
 };
 
-exports.getProfile = (req, res) => {
+exports.getProfileParam = (req, res) => {
     const person = people.profiles.find(p => p.id === req.query.id);
     res.render('profile', {
-        title: 'Profile',
+        title: `About ${person.firstname} ${person.lastname}`,
         person,
     })
 };
 
-// router.get('/profile', (req, res) => {
-//     const person = people.profiles.find(p => p.id === req.query.id);
-//     res.render('profile', {
-//       title: `About ${person.firstname} ${person.lastname}`,
-//       person,
-//     });
-//   });
+exports.getProfileSubdomain = (req, res) => {
+    const person = people.profiles.find(p => p.id === req.params.id);
+    res.render('profile', {
+        title: `About ${person.firstname} ${person.lastname}`,
+        person,
+    })
+};
