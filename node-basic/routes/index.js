@@ -1,24 +1,22 @@
 var express = require('express');
 var router = express.Router();
+const people = require('../people.json');
 
-// Get profile data from file
-const peopleController = require('../controllers/peopleController');
+// Render views
+router.get('/', (req, res) => {
+    // res.send(HTML);
+    res.render('index', {
+        title: 'Homepage',
+        people: people.profiles
+    })
+  });
 
-// Routes
-router.get('/', peopleController.homePage);
-router.get('/profile', peopleController.getProfileParam);
-router.get('/profile/:id', peopleController.getProfileSubdomain);
+router.get('/profile', (req, res) => {
+    const person = people.profiles.find(p => p.id === req.query.id);
+    res.render('profile', {
+      title: `About ${person.firstname} ${person.lastname}`,
+      person,
+    });
+});
 
-// Export routes
 module.exports = router;
-
-
-
-// What routes looked like inline w/o controller
-// router.get('/profile', (req, res) => {
-//     const person = people.profiles.find(p => p.id === req.query.id);
-//     res.render('profile', {
-//       title: `About ${person.firstname} ${person.lastname}`,
-//       person,
-//     });
-//   });
