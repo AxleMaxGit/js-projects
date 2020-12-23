@@ -8,5 +8,9 @@ block content
         no-repeat; background-size: cover;`)
         h2.person-name
           | #{person.firstname} #{person.lastname}
-        a(href=`/profile?id=${person.id}`)
-          | View #{person.firstname}'s Profile
+        p
+          a(href=`/profile/${person.id}`)
+            | View #{person.firstname}'s Profile [subdomain]
+        p
+          a(href=`/profile?id=${person.id}`)
+            | View #{person.firstname}'s Profile [parameter]
