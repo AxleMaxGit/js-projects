@@ -3,9 +3,3 @@
 node_modules/
 
 **/data/
-
-# exclude everything
-**/test/
-
-# exception to the rule
-!/test/.gitkeep 
