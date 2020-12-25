@@ -1,9 +1,0 @@
-You can't commit empty folders in git. If you want it to show up, you need to put something in it, even just an empty file.
-
-For example, add an empty file called .gitkeep to the folder you want to keep, then in your .gitignore file write:
-
-# exclude everything
-somefolder/*
-
-# exception to the rule
-!somefolder/.gitkeep 
