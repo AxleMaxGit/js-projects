@@ -2,8 +2,10 @@
 
 node_modules/
 
-# ** ignores all subdirectories
 **/data/
 
-!/data/db/.gitkeep
+# exclude everything
+/test/*
 
+# exception to the rule
+!/test/.gitkeep 
