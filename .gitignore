@@ -5,7 +5,7 @@ node_modules/
 **/data/
 
 # exclude everything
-/test/*
+**/test/
 
 # exception to the rule
 !/test/.gitkeep 
