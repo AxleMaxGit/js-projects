@@ -4,6 +4,8 @@ var router = express.Router();
 // Get profile data from file
 const testController = require('../controllers/testController');
 
+router.get('/', testController.homePage);
+
 router.get('/test', testController.testPage);
 
 router.get('/test/add', testController.editTest);
