@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 // Get profile data from file
-const peopleController = require('../controllers/peopleController');
+const testController = require('../controllers/testController');
 
-// Routes
-router.get('/', peopleController.homePage);
-router.get('/profile', peopleController.getProfileParam);
-router.get('/profile/:id', peopleController.getProfileSubdomain);
+router.get('/test', testController.testPage);
+
+router.get('/test/add', testController.editTest);
+
+router.post('/test/add', testController.createTest);
 
 // Export routes
 module.exports = router;

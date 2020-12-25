@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const personSchema = new mongoose.Schema({
+const testSchema = new mongoose.Schema({
     firstname : { type: String },
     lastname : { type: String },
     bio : { type: String },
@@ -9,4 +9,4 @@ const personSchema = new mongoose.Schema({
     id : { type: String }
 });
 
-module.exports = mongoose.model('Person', personSchema);
+module.exports = mongoose.model('Test', testSchema);

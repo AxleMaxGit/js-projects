@@ -1,0 +1,19 @@
+mixin testForm()
+  form(action="/test/add" method="POST" class="test")
+
+    label(for="firstname") First Name
+    input(type="text" name="firstname")
+
+    label(for="lastname") Last Name
+    input(type="text" name="lastname")
+
+    label(for="bio") Bio
+    input(name="bio")
+
+    label(for="tagline") Tagline
+    input(name="tagline")
+
+    label(for="id") Description
+    input(name="id")
+
+    input(type="submit" value="save" class="button")
