@@ -3,13 +3,20 @@ extends default
 block content
   div.container
     h2 Placeholder Home Page
+  div.spacer
+    hr
 
-
-
-    //- each person in people
-    //-   div.person
-    //-     h2.person-name
-    //-       | #{person.firstname} #{person.lastname}
+  div.tests
+    each test in tests
+      div.test
+        h2.test-name
+          hr
+          p #{test.firstname} #{test.lastname} 
+          p #{test.bio  || 'no bio'} 
+          p #{test.tagline || 'no tagline'}
+          p #{test.id  || 'no slug-id'} 
+          p #{`${test._id}`.slice(-10)}
+          hr
         
         //- // div.person-image(style=`background: url('/images/${person.imgSrc}') top center
         //- // no-repeat; background-size: cover;`)
