@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Test = mongoose.model('Test');
 
 exports.homePage = async (req, res) => {
-    const tests = await Test.find( { lastname: 'Freeman' } );
+    // const tests = await Test.find( { lastname: 'Freeman' } );
+    const tests = await Test.find();
     res.render('index', { title: 'Homepage', tests: tests });
 };
 
