@@ -1,0 +1,18 @@
+extends default
+
+block content
+  div.container
+    h2 #{person.firstname}'s Page
+  div.spacer
+    hr
+
+  div.person
+    div.person
+      h2.person-name
+        hr
+        p #{person.firstname} #{person.lastname} 
+        p #{person.bio  || 'no bio'} 
+        p #{person.tagline || 'no tagline'}
+        p #{person.id  || 'no slug-id'} 
+        p #{`${person._id}`.slice(-10)}
+        hr

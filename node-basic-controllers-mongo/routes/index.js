@@ -14,11 +14,17 @@ var router = express.Router();
 
 const personController = require('../controllers/personController');
 
-router.get('/', personController.homePage);
+router.get('/', personController.getPeople);
 
-router.get('/person/add', personController.editPerson);
+router.get('/people/', personController.getPeople);
 
-router.post('/person/add', personController.createPerson);
+router.get('/person/add', personController.addPerson);
+
+router.post('/person/add', personController.savePerson);
+
+router.get('/person/:id', personController.getPerson);
+
+router.get('/person/edit/:id', personController.editPerson);
 
 // Export routes
 module.exports = router;
