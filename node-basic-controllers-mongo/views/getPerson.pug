@@ -1,6 +1,14 @@
 extends default
 
 block content
+
+  div.homepage
+    a(href="/")
+      br
+      button.button Return Home
+      br 
+      br
+
   div.container
     h2 #{person.firstname}'s Page
   div.spacer
@@ -16,3 +24,7 @@ block content
         p #{person.id  || 'no slug-id'} 
         p #{`${person._id}`.slice(-10)}
         hr
+
+    div.delete
+      a(href=`/person/edit/${person.id}`)
+        button.button Edit this person

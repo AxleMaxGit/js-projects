@@ -18,7 +18,8 @@ block content
       div.person
         h2.person-name
           hr
-          p #{person.firstname} #{person.lastname} 
+          p 
+            a(href=`/person/${person.id}`) #{person.firstname} #{person.lastname} 
           p #{person.bio  || 'no bio'} 
           p #{person.tagline || 'no tagline'}
           p #{person.id  || 'no slug-id'} 

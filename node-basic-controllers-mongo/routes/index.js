@@ -20,11 +20,14 @@ router.get('/people/', personController.getPeople);
 
 router.get('/person/add', personController.addPerson);
 
-router.post('/person/add', personController.savePerson);
+router.post('/person/add', personController.createPerson);
 
 router.get('/person/:id', personController.getPerson);
 
 router.get('/person/edit/:id', personController.editPerson);
+
+router.post('/person/add/:id', personController.updatePerson);
+
 
 // Export routes
 module.exports = router;
