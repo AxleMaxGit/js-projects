@@ -13,7 +13,6 @@ mongoose.connection.once('open', function(){
 });
 
 // import all of our models
-// require('./models/Test');
 require('./models/Person');
 
 // Start our app!

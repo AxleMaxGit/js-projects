@@ -1,35 +1,31 @@
 var express = require('express');
 var router = express.Router();
 
-// Get profile data from file
-// const testController = require('../controllers/testController');
-
-// router.get('/', testController.homePage);
-
-// router.get('/test', testController.testPage);
-
-// router.get('/test/add', testController.editTest);
-
-// router.post('/test/add', testController.createTest);
-
 const personController = require('../controllers/personController');
 
+// List all the prople
 router.get('/', personController.getPeople);
-
 router.get('/people/', personController.getPeople);
 
+//CREATE
+// Load the Add Person Form
 router.get('/person/add', personController.addPerson);
-
+// Add new person record to DB
 router.post('/person/add', personController.createPerson);
 
+// RETRIEVE
+// Show a single person's record
 router.get('/person/:id', personController.getPerson);
 
+// UPDATE
+// Retrieve an existing person's record for editing
 router.get('/person/edit/:id', personController.editPerson);
-
+// Add the updated record to the DB
 router.post('/person/add/:id', personController.updatePerson);
 
+//DELETE
+// Delete the record for the person
 router.get('/person/delete/:id', personController.deletePerson);
-
 
 // Export routes
 module.exports = router;
