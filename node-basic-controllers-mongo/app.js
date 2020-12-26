@@ -1,9 +1,9 @@
 const express = require('express');
+// const session = require('express-session');
 const bodyParser = require('body-parser');
 const routes = require('./routes/index');
 
 const app = express();
-// const port = 7000;
 
 // use Pug as the template engine
 app.set('view engine', 'pug');
@@ -12,6 +12,13 @@ app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// app.use(session({
+//   secret: process.env.SECRET,
+//   key: process.env.KEY,
+//   resave: false,
+//   saveUninitialized: false,
+//   store: new MongoStore({ mongooseConnection: mongoose.connection })
+// }));
 
 // serve static files from the `public` folder
 app.use(express.static(__dirname + '/public'));
