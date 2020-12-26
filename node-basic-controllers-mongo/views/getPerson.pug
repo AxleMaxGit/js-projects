@@ -25,6 +25,10 @@ block content
         p #{`${person._id}`.slice(-10)}
         hr
 
-    div.delete
+    div.edit
       a(href=`/person/edit/${person.id}`)
         button.button Edit this person
+
+    div.delete
+      a(href=`/person/delete/${person.id}`)
+        button.button Delete this person

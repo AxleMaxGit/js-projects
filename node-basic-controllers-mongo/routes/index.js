@@ -28,6 +28,8 @@ router.get('/person/edit/:id', personController.editPerson);
 
 router.post('/person/add/:id', personController.updatePerson);
 
+router.get('/person/delete/:id', personController.deletePerson);
+
 
 // Export routes
 module.exports = router;

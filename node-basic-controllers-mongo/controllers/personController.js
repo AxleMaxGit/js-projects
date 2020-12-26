@@ -42,3 +42,9 @@ exports.updatePerson = async (req, res) => {
     console.log('db save complete');
     res.redirect('/');
 };
+
+exports.deletePerson = async (req, res) => {
+    await Person.findOneAndDelete({id: req.params.id})
+    console.log('db delete complete');
+    res.redirect('/');
+};
