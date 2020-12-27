@@ -1,6 +1,7 @@
 const express = require('express');
 // const session = require('express-session');
 const bodyParser = require('body-parser');
+// const expressValidator = require('express-validator');
 const routes = require('./routes/index');
 
 const app = express();
@@ -11,6 +12,9 @@ app.set('view engine', 'pug');
 // Takes the raw requests and turns them into usable properties on req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
+// app.use(expressValidator());
 
 // app.use(session({
 //   secret: process.env.SECRET,
