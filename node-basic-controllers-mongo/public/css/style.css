@@ -17,117 +17,139 @@
 
 
 html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
   box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 350;
+  font-size: 14px;
+  color: black;
+  text-shadow: 0 2px 0 rgba(179, 18, 18, 0.07)07);
 }
 
-*, *::before, *::after {
-  box-sizing: inherit; /* [1] */
-  margin: 0;
-  padding: 0;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
-
-
 
 /* FONTS
    ========================================================================== */
 
 body {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; /* [2] */
+  letter-spacing: 0px;
 }
 
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+}
 
 /* Header
    ========================================================================== */
 
 .header {
+  /* Centre horizontal */
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  /* Centre vertical */
   height: 80px;
+  line-height: 80px;
+  white-space: nowrap;
+  /* Colours */
   background-color: #FF5733;
   color: #FFFFFF;
-  margin-bottom: 50px;
+  /* styling */
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
-
-
-/* Homepage Container
+/* Containers
    ========================================================================== */
 
-.container {
-  width: 960px;
-  margin: 0 auto;
+.tweeters {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin: 15px 0 15px 0;
 }
 
-
-
-/* Profile Card
-   ========================================================================== */
+.button-container {
+  /* Position the button in the grid */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 50px;
+  /* Centre vertical */
+  height: 50px;
+  line-height: 50px;
+  white-space: nowrap;
+  /* styling */
+  margin: 15px 0 15px 0;
+}
 
 .person {
   text-align: center;
+  border: 3px solid rgba(243, 109, 6, 0.6);
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  background-color:rgba(255, 255, 255, 0.6); 
 }
 
-.person > * {
-  margin-bottom: 5px;
+.person a{
+  color: rgb(0, 166, 255);
+  text-decoration: none;
 }
 
-.person-image {
-  width: 100%;
-  height: 300px;
-}
-
-
-
-/* Profile Page
-   ========================================================================== */
-
-.profile {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-}
-
-.profile-image {
-  height: 100%;
-  flex-grow: 1;
-  flex-basis: 50%;
-}
-
-.profile-details {
-  flex-basis: 30%;
-  flex-grow: 1;
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.profile-details > * {
-  margin-bottom: 20px;
-}
-
-
-
-/* Buttons
-   ========================================================================== */
+/* Buttons */
 
 .button {
-  height: 50px;
-  line-height: 50px;
-  width: 100%;
   text-decoration: none;
+  /* Style Font */
   text-align: center;
-  font-size: 20px
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  /* Style "button" */
+  background-color: rgba(0, 166, 255);
+  border-radius: 5px;
+  border: 2px solid rgb(0, 166, 255, 0.6);
+  /* Position the button */
+  grid-column: 2 / 5;
 }
 
-.button-twitter {
-  color: #FFFFFF;
-  background-color: #659AF1;
+/* anchors to look like buttons */
+a.button {
+  /* Style Font */
+  text-align: center;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  /* Style "button" */
+  background-color: rgba(0, 166, 255);
   border-radius: 5px;
+  border: 2px solid rgb(0, 166, 255, 0.6);
+  /* Position the button */
+  grid-column: 2 / 5;
+}
+
+/* Formss */
+input {
+  padding:10px;
+  margin:10px 0;
+  font-family:inherit;
+  font-size: inherit;
+}
+
+label {
+  width: 20%;
+  display: inline-block;
+  text-align: left;
+}
+
+
+.text-input {
+  border: 2px solid #eee;
+  border-radius:10px;
 }

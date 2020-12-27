@@ -21,7 +21,7 @@ exports.createPerson = async (req, res) => {
     res.redirect('/');
 };
 
-// RETRIEVE
+// RETRIEVE˚
 // Show a single person's record
 exports.getPerson = async (req, res) => {
     const person = await Person.findOne({id: req.params.id});

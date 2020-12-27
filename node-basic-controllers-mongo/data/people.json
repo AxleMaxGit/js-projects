@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "5fe6f37d1a753ab8235dca0c"
+  },
+  "firstname": "Oscar",
+  "lastname": "Freeman",
+  "bio": "Punk",
+  "tagline": "I don't want to",
+  "id": "oscar",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe7a75ca4bcddf173ca5c70"
+  },
+  "firstname": "Alex",
+  "lastname": "Freeman",
+  "bio": "Learning",
+  "tagline": "I will get this one day",
+  "id": "alex",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe7c29d35cc15f846c74984"
+  },
+  "firstname": "Clare",
+  "lastname": "Freeman",
+  "bio": "Beautiful Lady",
+  "tagline": "Helping others",
+  "id": "clare",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe8767bbc7c43404e0155fd"
+  },
+  "firstname": "Jeff",
+  "lastname": "Freeman",
+  "bio": "Grandpa",
+  "tagline": "Builder",
+  "id": "jeff",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe87690bc7c43404e0155fe"
+  },
+  "firstname": "Janet",
+  "lastname": "Freeman",
+  "bio": "Grandma",
+  "tagline": "Come over",
+  "id": "janet",
+  "__v": 0
+}]

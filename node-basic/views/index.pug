@@ -11,3 +11,11 @@ block content
         p
           a(href=`/profile?id=${person.id}`)
             | View #{person.firstname}'s Profile
+  
+  <style>
+    .container {
+      diaplay: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 15px;
+    }
+  </style>

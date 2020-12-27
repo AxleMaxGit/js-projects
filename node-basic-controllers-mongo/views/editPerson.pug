@@ -3,14 +3,10 @@ extends default
 block content
   include mixins/_personForm
 
-  div.homepage
-  a(href="/")
-    br
-    button.button Return Home
-    br 
-    br
-    
-  H2 Set person data
-  br
-  br
-  +personForm(person)
+  .button-container
+    a.button(href="/") Return Home
+
+  .container
+    H2 Set person data
+  
+    +personForm(person)

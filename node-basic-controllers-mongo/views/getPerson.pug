@@ -2,33 +2,22 @@ extends default
 
 block content
 
-  div.homepage
-    a(href="/")
-      br
-      button.button Return Home
-      br 
-      br
+  .button-container
+    a.button(href="/") Return Home
 
-  div.container
+  .container
     h2 #{person.firstname}'s Page
-  div.spacer
-    hr
 
-  div.person
-    div.person
-      h2.person-name
-        hr
-        p #{person.firstname} #{person.lastname} 
-        p #{person.bio  || 'no bio'} 
-        p #{person.tagline || 'no tagline'}
-        p #{person.id  || 'no slug-id'} 
-        p #{`${person._id}`.slice(-10)}
-        hr
+  .person
+    h2.person-name
+      p #{person.firstname} #{person.lastname} 
+      p #{person.bio  || 'no bio'} 
+      p #{person.tagline || 'no tagline'}
+      p #{person.id  || 'no slug-id'} 
+      p #{`${person._id}`.slice(-10)}
 
-    div.edit
-      a(href=`/person/edit/${person.id}`)
-        button.button Edit this person
+  .button-container
+    a.button(href=`/person/edit/${person.id}`) Edit this person
 
-    div.delete
-      a(href=`/person/delete/${person.id}`)
-        button.button Delete this person
+  .button-container
+    a.button(href=`/person/delete/${person.id}`) Delete this person

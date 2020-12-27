@@ -1,0 +1,58 @@
+[
+  {
+    "firstname": "#1 Son",
+    "lastname": "Freeman",
+    "bio": "#1 Son",
+    "tagline": "#1 Son",
+    "id": "1son"
+  },
+  {
+    "firstname": "#2 Son",
+    "lastname": "Freeman",
+    "bio": "#2 Son",
+    "tagline": "#2 Son",
+    "id": "2son"
+  },
+  {
+    "firstname": "#3 Son",
+    "lastname": "Freeman",
+    "bio": "#3 Son",
+    "tagline": "#3 Son",
+    "id": "3son"
+  },
+  {
+    "firstname": "#4 Son",
+    "lastname": "Freeman",
+    "bio": "#4 Son",
+    "tagline": "#4 Son",
+    "id": "4son"
+  },
+  {
+    "firstname": "Alex",
+    "lastname": "Freeman",
+    "bio": "Learning",
+    "tagline": "I will get this one day",
+    "id": "alex"
+  },
+  {
+    "firstname": "Clare",
+    "lastname": "Freeman",
+    "bio": "Beautiful Lady",
+    "tagline": "Helping others",
+    "id": "clare"
+  },
+  {
+    "firstname": "Jeff",
+    "lastname": "Freeman",
+    "bio": "Grandpa",
+    "tagline": "Builder",
+    "id": "jeff"
+  },
+  {
+    "firstname": "Janet",
+    "lastname": "Freeman",
+    "bio": "Grandma",
+    "tagline": "Come over",
+    "id": "janet"
+  }
+]

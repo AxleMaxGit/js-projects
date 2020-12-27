@@ -1,27 +1,19 @@
 extends default
 
 block content
-  div.container
-    h2 Home Page
-  div.spacer
-    hr
   
-  div.add-new-person
-    a(href="/person/add")
-      br
-      button.button Click to add a new person
-      br 
-      br
+  .button-container
+    a.button(href="/person/add") Click to add a new person
 
-  div.people
+  .tweeters
     each person in people
-      div.person
-        h2.person-name
-          hr
-          p 
-            a(href=`/person/${person.id}`) #{person.firstname} #{person.lastname} 
-          p #{person.bio  || 'no bio'} 
-          p #{person.tagline || 'no tagline'}
-          p #{person.id  || 'no slug-id'} 
-          p #{`${person._id}`.slice(-10)}
-          hr
+      .person
+        p 
+          a(href=`/person/${person.id}`) #{person.firstname} #{person.lastname} 
+        p #{person.bio  || 'no bio'} 
+        p #{person.tagline || 'no tagline'}
+        p #{person.id  || 'no slug-id'} 
+        p #{`${person._id}`.slice(-10)}
+  
+
+
