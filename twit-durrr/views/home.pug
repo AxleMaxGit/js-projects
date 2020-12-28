@@ -2,7 +2,7 @@ extends default
 
 block content
   .container 
-    .col.twocol.menucol
+    .twocol.menucol
       each item in menu
         .item 
           - var img = `${item.img}`
@@ -10,9 +10,10 @@ block content
         .item 
           p #{item.id}
 
-    .col.twocol.tweetcol
+    .twocol.tweetcol
       each tweet in tweets
-        .item 
+        .item
+          hr 
           - var img = `${tweet.img}`
           img.profile(src=img)
         .item 

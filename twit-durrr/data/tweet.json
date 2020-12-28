@@ -1,0 +1,51 @@
+[
+  {
+    "username": "thealexfreeman",
+    "text": "this is a tweet",
+    "img": "images/twit_user/hYKAQfS6_400x400.jpg",
+    "tweet_id": 123456,
+    "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
+  },
+  {
+    "username": "conanobrien",
+    "text": "Getting older. I used to be able to run a 4-minute mile, bench press 380 pounds, and tell the truth.",
+    "img": "images/twit_user/hYKAQfS6_400x400.jpg",
+    "tweet_id": 123456,
+    "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
+  },
+  {
+    "username": "thealexfreeman",
+    "text": "I call my nipples The Godfather because no one is interested in seeing the third one",
+    "img": "images/twit_user/hYKAQfS6_400x400.jpg",
+    "tweet_id": 123456,
+    "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
+  },
+  {
+    "username": "thealexfreeman",
+    "text": "Me: i have a headache..  WebMD: and it’ll be your last",
+    "img": "images/message.svg",
+    "tweet_id": 123456,
+    "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
+  },
+  {
+    "username": "oscarfreeman",
+    "text": "i love sleepovers",
+    "img": "images/message.svg",
+    "tweet_id": 123456,
+    "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
+  },
+  {
+    "username": "oscarfreeman",
+    "text": "school is awesome",
+    "img": "images/message.svg",
+    "tweet_id": 123456,
+    "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
+  },
+  {
+    "username": "clarefreeman",
+    "text": "Friends is the best!",
+    "img": "images/message.svg",
+    "tweet_id": 123456,
+    "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
+  }
+]

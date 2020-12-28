@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Home",
+    "img": "images/home.svg",
+    "id": "home"
+  },
+  {
+    "name": "Explore",
+    "img": "images/explore.svg",
+    "id": "explore"
+  },
+  {
+    "name": "Notifications",
+    "img": "images/notification.svg",
+    "id": "notification"
+  },
+  {
+    "name": "Messages",
+    "img": "images/message.svg",
+    "id": "message"
+  },
+  {
+    "name": "Bookmarks",
+    "img": "images/bookmark.svg",
+    "id": "bookmark"
+  },
+  {
+    "name": "Lists",
+    "img": "images/list.svg",
+    "id": "list"
+  },
+  {
+    "name": "Profile",
+    "img": "images/profile.svg",
+    "id": "profile"
+  }
+]

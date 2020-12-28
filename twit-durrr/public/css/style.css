@@ -1,0 +1,81 @@
+/* CSS GRID NOTES
+X-axis == 'inline' axis -- uses 'justify' 
+Y-axis == 'block' axis -- uses 'align' 
+*/
+
+/* === CORE === */
+
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: black;
+}
+
+*, *:before, *:after { box-sizing: inherit; }
+
+body {
+  letter-spacing: 0px;
+  background-color: #AAA;
+  margin: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
+
+/* === STYLING === */
+
+.container {
+  height: 90vh;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 30px;
+}
+
+.col{
+  background-color: rgb(220, 206, 216);
+}
+
+.twocol {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: auto 1fr;
+  background-color: rgb(255, 0, 200);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+
+.menucol {
+  grid-auto-rows: 50px;
+  font-size: 18px;
+}
+
+.tweetcol {
+  font-size: 24px;
+}
+
+.item {
+  display: grid;
+  align-content: start;
+  /* grid-auto-rows: 30px; */
+  background-color: #ffffff;
+}
+
+.icon {
+  width:30px;
+  height: 30px;
+}
+
+.profile {
+  width:45px;
+  height: 45px;
+  border-radius: 20px;
+}
+
+p {
+  line-height: 1.5 ;
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+}
