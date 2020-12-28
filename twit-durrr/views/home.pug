@@ -1,28 +1,59 @@
 extends default
 
 block content
+  include mixins/_tweetForm
+  <!-- Threee Column Twitter Clone-->
   .container 
-    .twocol.menucol
-      each item in menu
-        .item 
-          - var img = `${item.img}`
-          img.icon(src=img) 
-        .item 
-          p #{item.id}
 
-    .twocol.tweetcol
-      each tweet in tweets
+    <!-- Menu Column-->  
+    .menucol
+      .item
+        img.logo(src='images/Twitter_Logo_Blue.png')
+      .twocol(style="border: 0px;")
+        
+        each item in menu
+          .item 
+            - var img = `${item.img}`
+            img.icon(src=img) 
+          .item 
+            p #[strong #{item.name}]
+      .item
+        a.button(href=`/tweet/add`) Tweet
+      .twocol
         .item
-          hr 
-          - var img = `${tweet.img}`
-          img.profile(src=img)
-        .item 
-          p #[strong #{tweet.username}] @#{tweet.username}
-          p #{tweet.text}
-          p #{tweet.created_at}
-          
+          img.profile(src='images/twit_user/alex_400x400.jpg') 
+        .item(style="font-size: 14px;")
+          p #[strong Alex Freeman ] 
+          p @thealexfreeman
+
+    <!-- Tweets Column--> 
+    .tweetcol
+      <!-- Tweets Input Box-->
+      .twocol
+        .item
+          img.profile(src='images/twit_user/alex_400x400.jpg') 
+        .item
+          +tweetForm()
+           
+
+      <!-- Main Tweet Feed-->
+      each tweet in tweets
+        .twocol
+          <!-- Display Tweet Author Img-->
+          .item
+            hr 
+            - var img = `${tweet.img}`
+            img.profile(src=img)
+          <!-- Display Tweet Body-->
+          .item 
+            p #[strong #{tweet.username}] @#{tweet.username}
+            p #{tweet.text}
+            p #{tweet.created_at}
+
+    <!-- Search + Ads Column-->     
     .col
     
+    <!-- Placeholder / Footer Columns-->
     .col
 
     .col

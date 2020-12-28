@@ -9,8 +9,8 @@ html {
   /* border-box box model allows us to add padding and border to our elements without increasing their size */
   box-sizing: border-box;
   /* A system font stack so things load nice and quick! */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: "Helvetica Neue",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
   color: black;
 }
 
@@ -19,53 +19,83 @@ html {
 body {
   letter-spacing: 0px;
   background-color: #AAA;
-  margin: 50px;
+  margin: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
 
 /* === STYLING === */
-
 .container {
   height: 90vh;
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 30px;
+  grid-gap: 2px;
+  grid-template-columns: minmax(175px, 250px) minmax(600px, 1fr) 1fr;
+  grid-template-rows: minmax(50px, 1fr) 30px;
+  padding-left: 20px;
+  background-color: #ffffff;
 }
 
-.col{
-  background-color: rgb(220, 206, 216);
+/* === Menu Column === */
+.menucol {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-rows: minmax(50px, 70px) minmax(250px, 400px) auto 50px;
+  font-size: 18px;
+}
+
+/* === Tweet Column === */
+.tweetcol {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-rows: 210px auto;
+  border: 1px solid dcf0fa;
 }
 
 .twocol {
   display: grid;
-  grid-gap: 5px;
+  grid-gap: 2px;
   grid-template-columns: auto 1fr;
-  background-color: rgb(255, 0, 200);
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid #dcf0fa;
 }
 
-
-.menucol {
-  grid-auto-rows: 50px;
-  font-size: 18px;
-}
-
-.tweetcol {
-  font-size: 24px;
+.col{
+  background-color: rgb(255, 204, 0);
 }
 
 .item {
   display: grid;
   align-content: start;
-  /* grid-auto-rows: 30px; */
   background-color: #ffffff;
+  margin: 5px 5px 5px 5px;
+
+}
+
+/* anchors to look like buttons */
+a.button, .button{
+  /* Style Font */
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+
+  /* Style "button" */
+  background-color: rgba(0, 166, 255);
+  border-radius: 25px;
+  border: 2px solid rgb(0, 166, 255, 0.6);
+  /* Position the button */
+  padding: 10px 20px 10px 20px;
+  margin: 5px 10px 5px 10px;
 }
 
 .icon {
-  width:30px;
-  height: 30px;
+  width:20px;
+  height: 20px;
+}
+
+.logo {
+  width:40px;
+  height: 40px;
+  padding-left: 0px;
 }
 
 .profile {
@@ -78,4 +108,22 @@ p {
   line-height: 1.5 ;
   margin-top: 0 ;
   margin-bottom: 0 ;
+}
+
+.tweetinput {
+  width:500px;
+  height: 140px;
+  resize: none;
+  margin-top: 10px;
+  font-size: 18px;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.3125;
+  border: 0px solid;
+}
+
+textarea:focus {
+  outline: none !important;
+  border:0px;
 }
