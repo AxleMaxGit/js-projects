@@ -1,0 +1,22 @@
+mixin personForm(person = {})
+  form(action=`/person/add/${person.id || ''}` method="POST" class="person")
+
+    p
+      label(for="firstname") First Name
+      input(type="text" class="text-input" name="firstname" value=person.firstname)
+
+    p
+      label(for="lastname") Last Name
+      input(type="text" class="text-input" name="lastname" value=person.lastname)
+
+    p
+      label(for="bio") Bio
+      input(type="text" class="text-input" name="bio" value=person.bio)
+    p
+      label(for="tagline") Tagline
+      input(type="text" class="text-input" name="tagline" value=person.tagline)
+    p
+      label(for="id") Description
+      input(type="text" class="text-input" name="id" value=person.id)
+
+    input(type="submit" value="save" class="button")

@@ -1,0 +1,23 @@
+extends default
+
+block content
+
+  .button-container
+    a.button(href="/") Return Home
+
+  .container
+    h2 #{person.firstname}'s Page
+
+  .person
+    h2.person-name
+      p #{person.firstname} #{person.lastname} 
+      p #{person.bio  || 'no bio'} 
+      p #{person.tagline || 'no tagline'}
+      p #{person.id  || 'no slug-id'} 
+      p #{`${person._id}`.slice(-10)}
+
+  .button-container
+    a.button(href=`/person/edit/${person.id}`) Edit this person
+
+  .button-container
+    a.button(href=`/person/delete/${person.id}`) Delete this person
