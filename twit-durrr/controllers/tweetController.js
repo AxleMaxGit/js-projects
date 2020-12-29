@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 const path = require('path');
-
 const format = require('date-fns/format');
-const stPattysDay = new Date('2020/03/17');
-const formattedDate2 = format(stPattysDay, 'MMMM dd, yyyy');
-
 
 const Menu = mongoose.model('Menu');
 const Tweet = mongoose.model('Tweet');
@@ -13,6 +9,13 @@ const Tweet = mongoose.model('Tweet');
 exports.getHome = async (req, res) => {
   const menu = await Menu.find();
   const tweets = await Tweet.find();
+  console.log(typeof tweets);
+
+  for (const tweet in tweets) {
+    // format the created_at date for display
+    tweets[tweet]['created_at'] = format(new Date(tweets[tweet]['created_at']), 'MMM dd, yyyy');
+    console.log(`${tweet}: ${tweets[tweet]}`);
+  };
   res.render('home', { title: 'Home', menu, tweets });
 };
 

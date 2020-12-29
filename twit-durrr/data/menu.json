@@ -1,37 +1,37 @@
 [
   {
     "name": "Home",
-    "img": "images/home.svg",
+    "img": "images/icons/home.svg",
     "id": "home"
   },
   {
     "name": "Explore",
-    "img": "images/explore.svg",
+    "img": "images/icons/explore.svg",
     "id": "explore"
   },
   {
     "name": "Notifications",
-    "img": "images/notification.svg",
+    "img": "images/icons/notification.svg",
     "id": "notification"
   },
   {
     "name": "Messages",
-    "img": "images/message.svg",
+    "img": "images/icons/message.svg",
     "id": "message"
   },
   {
     "name": "Bookmarks",
-    "img": "images/bookmark.svg",
+    "img": "images/icons/bookmark.svg",
     "id": "bookmark"
   },
   {
     "name": "Lists",
-    "img": "images/list.svg",
+    "img": "images/icons/list.svg",
     "id": "list"
   },
   {
     "name": "Profile",
-    "img": "images/profile.svg",
+    "img": "images/icons/profile.svg",
     "id": "profile"
   }
 ]

@@ -1,13 +1,21 @@
 mixin feed()
 
   each tweet in tweets
-        .twocol.box
-          <!-- Display Tweet Author Img-->
-          .item
-            - var img = `${tweet.img}`
-            img.profile(src=img)
-          <!-- Display Tweet Body-->
-          .item 
-            p #[strong #{tweet.username}] @#{tweet.username}
-            p #{tweet.text}
-            p #{tweet.created_at}
+
+    .twocol.box
+      <!-- Display Tweet Author Img-->
+      .item
+        - var img = `${tweet.img}`
+        img.profile(src=img)
+      <!-- Display Tweet Body-->
+      
+      .item
+        p #[strong #{tweet.username}] &nbsp; &nbsp;  @#{tweet.username} &nbsp; &nbsp;  #{tweet.created_at}
+        p #{tweet.text}
+        br
+        img.icon(src='/images/icons/comment.svg') 
+        | &nbsp;7 &nbsp; &nbsp; &nbsp; &nbsp; 
+        img.icon(src='/images/icons/retweet.svg')
+        | &nbsp;34 &nbsp; &nbsp; &nbsp; &nbsp; 
+        img.icon(src='/images/icons/like.svg')
+        | &nbsp;181
