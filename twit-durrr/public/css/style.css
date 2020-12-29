@@ -18,13 +18,13 @@ html {
 
 body {
   letter-spacing: 0px;
-  background-color: #AAA;
-  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  /* margin: 10px; */
 }
 
-h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
+/* === FONT & Text === */
 
-/* === FONT === */
+h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
 
 .fnt-sm {
   font-size: 15px;
@@ -40,51 +40,83 @@ h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
 
 /* === STYLING === */
 .container {
-  height: 90vh;
+  position:relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ededed;
+}
+
+.pageframe {
   display: grid;
-  grid-gap: 2px;
+  grid-gap: 1px;
   grid-template-columns: minmax(175px, 250px) minmax(600px, 1fr) 1fr;
-  grid-template-rows: minmax(50px, 1fr) 30px;
-  padding-left: 20px;
-  background-color: #ffffff;
+  grid-template-rows: minmax(300px, 95vh) 30px;
+  /* background-color: #7b1b53; */
+}
+
+.col{
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
 }
 
 /* === Menu Column === */
 .menucol {
   display: grid;
   grid-gap: 2px;
-  grid-template-rows: minmax(50px, 70px) minmax(250px, 400px) auto 50px;
+  grid-template-rows: minmax(30px, 50px) minmax(260px, 40vh) minmax(auto, 1fr) 60px;
   font-size: 18px;
 }
 
 /* === Tweet Column === */
 .tweetcol {
   display: grid;
-  grid-gap: 1px;
-  grid-template-rows: 50px 210px auto;
-  border: 1px solid dcf0fa;
+  grid-gap: 5px;
+  grid-template-rows: 50px 210px minmax(200px, 1fr);
+  background-color: #f7f7f7;
+
 }
+
 
 .twocol {
   display: grid;
-  grid-gap: 2px;
   grid-template-columns: auto 1fr;
-  border: 1px solid #dcf0fa;
 }
 
-.col{
-  background-color: rgb(255, 204, 0);
+.topalign {
+  display: grid;
+  align-content: start;
+}
+
+.centeralign {
+  display: grid;
+  align-content: center;
+}
+
+.stretchalign {
+  display: grid;
+  align-content: stretch;
+}
+
+.endalign {
+  display: grid;
+  align-content: end;
+}
+
+.rightalign{
+  text-align: right;
 }
 
 .item {
-  display: grid;
-  align-content: start;
-  background-color: #ffffff;
-  margin: 5px 5px 5px 5px;
+  /* background-color: #56e4a2d6; */
+  padding: 10px 10px 10px 10px;
+  margin 0px auto;
 }
 
-hr {
-  border: 3px solid rgb(2, 2, 2);
+.box {
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  background-color: #ffffff;
+
 }
 
 /* anchors to look like buttons */
@@ -128,10 +160,10 @@ p {
 }
 
 .tweetinput {
-  width:500px;
-  height: 140px;
+  width:520px;
+  height: 135px;
   resize: none;
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 18px;
   word-wrap: break-word;
   font-family: inherit;

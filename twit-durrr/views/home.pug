@@ -2,28 +2,31 @@ extends pageframe
 
 block menu
   <!-- Menu Column--> 
-  include mixins/_menu
-  +menu()
+  .col.stretchalign
+    include mixins/_menu
+    +menu()
 
 block content
   <!-- Main Column--> 
-  .tweetcol
-    <!-- Navbar-->
-    .item
-      h2 #{title}
-    
-    <!-- Tweets Input Box-->
-    include mixins/_tweetForm
+  .col
+    .tweetcol
+      <!-- Navbar-->
+      .box.item
+        h2 #{title}
 
-    .twocol
-      .item
-        img.profile(src='images/twit_user/alex_400x400.jpg') 
-      .item
-        +tweetForm()
-        
-    <!-- Main Tweet Feed-->
-    include mixins/_feed
-    +feed()
+      <!-- Tweets Input Box-->
+      include mixins/_tweetForm
+
+      .twocol.box
+        .item
+          img.profile(src='/images/twit_user/alex_400x400.jpg') 
+        .item
+          +tweetForm()
+          
+      <!-- Main Tweet Feed-->
+      .box
+        include mixins/_feed
+        +feed()
 
 
 

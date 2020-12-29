@@ -1,6 +1,9 @@
 mixin tweetForm()
   form(action="/tweet/add" method="POST" class="tweet")
     
-    textarea.tweetinput(name='text' maxlength="300" placeholder='What\'s happening?')
+    .rightalign
 
-    input(type="submit" value="Tweet" class="button")
+      textarea.tweetinput(name='text' maxlength="300" placeholder='What\'s happening?')
+
+      input(type="submit" value="Tweet" class="button")
+

@@ -13,7 +13,7 @@ const Tweet = mongoose.model('Tweet');
 exports.getHome = async (req, res) => {
   const menu = await Menu.find();
   const tweets = await Tweet.find();
-  res.render('home', { title: 'Homepage', menu, tweets });
+  res.render('home', { title: 'Home', menu, tweets });
 };
 
 exports.getTweet = async (req, res) => {
