@@ -1,0 +1,22 @@
+extends pageframe
+
+block menu
+  <!-- Menu Column--> 
+  include mixins/_menu
+  +menu()
+
+block content
+  <!-- Main Column-->
+  .tweetcol
+    <!-- Navbar-->
+    .item
+      h2 #{title}
+      
+    <!-- Main Tweet Feed-->
+    include mixins/_tweet
+    +tweet()
+
+    .item
+      h4 PLACEHOLDER: REPLIES
+    
+    

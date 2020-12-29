@@ -1,0 +1,23 @@
+mixin menu()
+  .menucol
+    .item
+      img.logo(src='/images/Twitter_Logo_Blue.png')
+    .twocol(style="border: 0px;")
+      
+      each item in menu
+        .item 
+          - var img = `${item.img}`
+          img.icon(src=img) 
+        .item 
+          p #[strong #{item.name}]
+    .item
+      a.button(href=`/tweet/add`) Tweet
+    .twocol
+      .item
+        img.profile(src='/images/twit_user/alex_400x400.jpg') 
+      .item(style="font-size: 14px;")
+        p #[strong Alex Freeman ] 
+        p @thealexfreeman
+
+
+

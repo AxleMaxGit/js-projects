@@ -1,14 +1,21 @@
 var express = require('express');
 var router = express.Router();
 
+const personController = require('../controllers/personController');
 const tweetController = require('../controllers/tweetController');
 
 // List all the people
-router.get('/', personController.getHome);
+router.get('/', tweetController.getHome);
+
+// Load the Add Tweet Form
+router.get('/tweet/:tweet_id', tweetController.getTweet);
 
 //CREATE
 // Load the Add Tweet Form
 router.get('/tweet/add', tweetController.addTweet);
+
+
+router.post('/tweet/add', tweetController.saveTweet);
 
 // Export routes
 module.exports = router;

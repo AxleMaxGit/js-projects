@@ -1,0 +1,14 @@
+mixin feed()
+
+  each tweet in tweets
+        .twocol
+          <!-- Display Tweet Author Img-->
+          .item
+            hr 
+            - var img = `${tweet.img}`
+            img.profile(src=img)
+          <!-- Display Tweet Body-->
+          .item 
+            p #[strong #{tweet.username}] @#{tweet.username}
+            p #{tweet.text}
+            p #{tweet.created_at}

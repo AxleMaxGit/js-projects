@@ -24,6 +24,20 @@ body {
 
 h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
 
+/* === FONT === */
+
+.fnt-sm {
+  font-size: 15px;
+}
+
+.fnt-md {
+  font-size: 18px;
+}
+
+.fnt-lg {
+  font-size: 22px;
+}
+
 /* === STYLING === */
 .container {
   height: 90vh;
@@ -47,7 +61,7 @@ h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
 .tweetcol {
   display: grid;
   grid-gap: 1px;
-  grid-template-rows: 210px auto;
+  grid-template-rows: 50px 210px auto;
   border: 1px solid dcf0fa;
 }
 
@@ -67,7 +81,10 @@ h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
   align-content: start;
   background-color: #ffffff;
   margin: 5px 5px 5px 5px;
+}
 
+hr {
+  border: 3px solid rgb(2, 2, 2);
 }
 
 /* anchors to look like buttons */

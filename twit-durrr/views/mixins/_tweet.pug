@@ -1,0 +1,20 @@
+mixin tweet()
+
+  .twocol
+    <!-- Display Tweet Author Img-->
+
+    .item  
+      - var img = `${tweet.img}`
+      img.profile(src=img)
+
+    <!-- Display Tweet Body-->
+    .item 
+      p #[strong #{tweet.username}] 
+      p @#{tweet.username}
+      br
+      p.fnt-lg #{tweet.text}
+      br
+      p #{tweetdate}
+      br
+      p 12 likes
+  
