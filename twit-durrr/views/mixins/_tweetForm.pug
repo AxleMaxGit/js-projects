@@ -1,9 +1,49 @@
 mixin tweetForm()
+  
   form(action="/tweet/add" method="POST" class="tweet")
-    
+
     .rightalign
+    
+      textarea.tweetinput(
+        name='text' 
+        id='textarea' 
+        maxlength="300" 
+        placeholder='What\'s happening?'
+      )
 
-      textarea.tweetinput(name='text' maxlength="300" placeholder='What\'s happening?')
+      input(
+        type='hidden' 
+        name='username' 
+        value='thealexfreeman'
+      )
+      
+      input(
+        type="submit" 
+        id="button" 
+        value="Send It" 
+        class="button butOff"
+        disabled = true
+      )
 
-      input(type="submit" value="Tweet" class="button")
-
+      script.
+        // Get the elements to be checked and altered
+        var btn = document.getElementById('button');
+        var inpt = document.getElementById('textarea');
+    
+        // Listen for changes
+        inpt.addEventListener("input", function(){
+          // when text is present
+          if (this.value != '') {
+            // Enable the button
+            btn.disabled = false;
+            // Make it look enabled
+            btn.classList.remove('butOff');
+          } 
+          else {
+            // When text is not present
+            // Disable the button
+            btn.disabled = true;
+            // Make it look disabled
+            btn.classList.add('butOff');
+          }
+        })

@@ -1,6 +1,10 @@
 mixin feed()
 
   each tweet in tweets
+  
+    - let commentno = Math.floor(Math.random() * 20) + 1
+    - var rtno = (commentno * (Math.floor(Math.random() * 5) + 1)) - (Math.floor(Math.random() * 4) + 1)
+    - var likeno = (rtno * (Math.floor(Math.random() * 5) + 1)) - (Math.floor(Math.random() * 4) + 1)
 
     .twocol.box
       <!-- Display Tweet Author Img-->
@@ -10,12 +14,13 @@ mixin feed()
       <!-- Display Tweet Body-->
       
       .item
+      
         p #[strong #{tweet.username}] &nbsp; &nbsp;  @#{tweet.username} &nbsp; &nbsp;  #{tweet.created_at}
-        p #{tweet.text}
+        a.tweetlink(href=`/tweet/${tweet._id}`) #{tweet.text}
         br
         img.icon(src='/images/icons/comment.svg') 
-        | &nbsp;7 &nbsp; &nbsp; &nbsp; &nbsp; 
+        | &nbsp; #{commentno}  &nbsp; &nbsp; &nbsp; &nbsp; 
         img.icon(src='/images/icons/retweet.svg')
-        | &nbsp;34 &nbsp; &nbsp; &nbsp; &nbsp; 
+        | &nbsp;#{rtno} &nbsp; &nbsp; &nbsp; &nbsp; 
         img.icon(src='/images/icons/like.svg')
-        | &nbsp;181
+        | &nbsp;#{likeno}

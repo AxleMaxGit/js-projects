@@ -1,41 +1,59 @@
 const mongoose = require('mongoose');
-const path = require('path');
+// const path = require('path');
 const format = require('date-fns/format');
-
+const formatISO = require('date-fns/formatISO');
 const Menu = mongoose.model('Menu');
 const Tweet = mongoose.model('Tweet');
 
-// Get menu items
-exports.getHome = async (req, res) => {
-  const menu = await Menu.find();
-  const tweets = await Tweet.find();
-  console.log(typeof tweets);
 
+// [router.get('/', tweetController.getHome)]
+exports.getHome = async (req, res) => {
+  console.log('get /');
+  // Get menu items
+  const menu = await Menu.find();
+  // Retrieve tweets [sort by -1 gets reverse order for the key _id]
+  const tweets = await Tweet.find().sort({_id:-1});;
+
+  // format the created_at date for display
   for (const tweet in tweets) {
-    // format the created_at date for display
     tweets[tweet]['created_at'] = format(new Date(tweets[tweet]['created_at']), 'MMM dd, yyyy');
-    console.log(`${tweet}: ${tweets[tweet]}`);
   };
+  // Render page
   res.render('home', { title: 'Home', menu, tweets });
 };
 
+
+// [router.get('/tweet/:tweet_id', tweetController.getTweet);]]
 exports.getTweet = async (req, res) => {
+  console.log('get /tweet/:_id');
   const menu = await Menu.find();
-  const tweet = await Tweet.findOne({tweet_id: req.params.tweet_id});
+  const tweet = await Tweet.findOne({_id: req.params._id});
   const tweetdate = format(new Date(tweet.created_at), 'H:mm a • MMM dd, yyyy');
   res.render('tweet', { title: 'Tweet', menu, tweet, tweetdate });
-  console.log(tweetdate);
+  //console.log(tweetdate);
 };
 
-exports.addTweet = async (req, res) => {
-  console.log('Load Tweet Form');
-  // const menu = await Menu.find();
-  // const tweets = await Tweet.find();
-  // res.render('home', { title: 'Homepage', menu, tweets });
+// [router.get('/tweet/add', tweetController.addNew);]
+exports.addNew = async (req, res) => {
+  console.log('##MODAL## get: /tweet/add');
   res.redirect('/');
 };
 
+
+// [router.post('/tweet/add', tweetController.saveTweet);]
 exports.saveTweet = async (req, res) => {
-  console.log('Tweet Saved');
+  const tweetbody = req.body;
+  tweetbody.created_at = formatISO(new Date());
+  tweetbody.img = '/images/twit_user/alex_400x400.jpg';
+  console.log(tweetbody);
+  Tweet.insertMany(tweetbody);
   res.redirect('/');
 };
+
+
+
+
+
+
+
+

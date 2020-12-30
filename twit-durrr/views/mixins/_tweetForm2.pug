@@ -1,0 +1,42 @@
+mixin tweetForm()
+
+  form(action="/tweet/add" method="POST" class="tweet")
+    
+    .rightalign
+
+      textarea.tweetinput(
+        name='text' 
+        id='tweettext' 
+        maxlength="300" 
+        placeholder='What\'s happening?'
+      )
+
+      input(
+        type='hidden' 
+        name='username' 
+        value='thealexfreeman'
+      )
+
+      input(
+        type="submit" 
+        id="button" 
+        value="Tweet" 
+        class="button butOff"
+        disabled = true
+      )
+
+    script.
+      var btn = document.getElementById('button');
+      var inpt = document.getElementById('tweettext');
+      console.log(btn, inpt)
+
+      inpt.addEventListener("input", function(){
+        if (this.value != '') {
+          btn.disabled = false;
+          btn.class = 'butOn';
+          console.log('text');
+        } else {
+          
+          console.log('no text');
+        }
+      })
