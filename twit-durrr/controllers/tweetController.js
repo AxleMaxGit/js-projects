@@ -23,7 +23,6 @@ const multerOptions = {
   fileFilter(req, file, next) {
     const isPhoto = file.mimetype.startsWith('/image');
     if(isPhoto) {
-      console.log('Is a photo');
       next(null, true);
     } else {
       next({ message: 'That filetype isnt allowed!'}, false);
@@ -47,7 +46,6 @@ exports.getHome = async (req, res) => {
   res.render('home', { title: 'Home', menu, tweets });
 };
 
-
 // [router.get('/tweet/:tweet_id', tweetController.getTweet);]]
 exports.getTweet = async (req, res) => {
   console.log('get /tweet/:_id');
@@ -67,23 +65,21 @@ exports.addNew = async (req, res) => {
 // Middleware to handle image file upload in tweeet
 exports.upload = multer(multerOptions).single('photo');
 
-// Middleware to resize images
-// exports.resize = async (req, res, next) => {
-//   console.log('debug')
-//   // if there is no file to resize
-//   if( !req.file) {
-//     next(); //move on
-//     console.log('whoops!')
-//     return;
-//   } 
-//   console.log('here');
-//   console.log(req.file);
-// }
-
+//Middleware to resize images
+exports.resize = async (req, res, next) => {
+  console.log('debug')
+  // if there is no file to resize
+  if( !req.file) {
+    next(); //move on
+    console.log('no file selected')
+    return;
+  } 
+  console.log('file selected');
+  console.log(req.file);
+}
 
 // [router.post('/tweet/add', tweetController.saveTweet);]
 exports.saveTweet = async (req, res) => {
-  console.log('here');
   const tweetbody = req.body;
   tweetbody.created_at = formatISO(new Date());
   tweetbody.img = '/images/twit_user/alex_400x400.jpg';
