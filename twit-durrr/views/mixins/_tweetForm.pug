@@ -1,6 +1,6 @@
-mixin tweetForm()
+mixin tweetForm(tweet = {})
   
-  form(action="/tweet/add" method="POST" class="tweet")
+  form(action="/tweet/add" method="POST" class="tweet" enctype="multipart/form-data")
 
     .rightalign
     
@@ -11,12 +11,23 @@ mixin tweetForm()
         placeholder='What\'s happening?'
       )
 
+      //- replace with user ID once implemented
       input(
         type='hidden' 
         name='username' 
         value='thealexfreeman'
       )
-      
+
+      //- cosmetic filter [can be bypasssed] using serverside val in controller as well
+      label(for="photo") Photo
+        input(
+          type="file" 
+          name="photo" 
+          id="photo" 
+          accept="image/gif, image/jpeg, image/png")
+        if tweet.photo
+          img(src=`uploads/${tweet.photo}`, alt="")  
+
       input(
         type="submit" 
         id="button" 

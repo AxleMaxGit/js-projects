@@ -1,10 +1,36 @@
 const mongoose = require('mongoose');
 // const path = require('path');
+
+// Multi-part form handler library
+const multer = require('multer');
+// Image management [resize] library
+const jimp = require('jimp');
+// Library for creating unique identifiers
+const uuid = require('uuid');
+
+// data formatting and handling library
 const format = require('date-fns/format');
 const formatISO = require('date-fns/formatISO');
+
+// Compile models from schema
 const Menu = mongoose.model('Menu');
 const Tweet = mongoose.model('Tweet');
 
+const multerOptions = {
+  // read the file into memory
+  storage: multer.memoryStorage(),
+  // check it is a suitable filetype
+  fileFilter: function(req, file, next) {
+    const isPhoto = file.mimetype.startsWith('/image');
+    if(isPhoto) {
+      next(null, true);
+    } else {
+      next({ message: 'That filetype isn\'t allowed!'}, false);
+    }
+  }
+  // Types of files allowed
+
+};
 
 // [router.get('/', tweetController.getHome)]
 exports.getHome = async (req, res) => {
@@ -38,6 +64,22 @@ exports.addNew = async (req, res) => {
   console.log('##MODAL## get: /tweet/add');
   res.redirect('/');
 };
+
+// Middleware to handle image file upload in tweeet
+exports.upload = multer(multerOptions).single('photo');
+
+// Middleware to resize images
+exports.resize = async (req, res, next) => {
+  console.log('debug')
+  // if there is no file to resize
+  if( !req.file) {
+    next(); //move on
+    console.log('whoops!')
+    return;
+  } 
+  console.log('here');
+  console.log(req.file);
+}
 
 
 // [router.post('/tweet/add', tweetController.saveTweet);]
