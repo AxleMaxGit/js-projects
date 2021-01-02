@@ -26,7 +26,7 @@ mixin tweetForm(tweet = {})
           id="photo" 
           accept="image/gif, image/jpeg, image/png")
         if tweet.photo
-          img(src=`uploads/${tweet.photo}`, alt="")  
+          img(width=200 src=`uploads/${tweet.photo}`)  
 
       input(
         type="submit" 

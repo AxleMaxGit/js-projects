@@ -16,7 +16,7 @@ router.get('/tweet/add', tweetController.addNew);
 // UPDATE - save new tweet from form to db
 router.post('/tweet/add', 
   tweetController.upload,
-  tweetController.resize,
+  // tweetController.resize,
   tweetController.saveTweet);
 
 // Export routes

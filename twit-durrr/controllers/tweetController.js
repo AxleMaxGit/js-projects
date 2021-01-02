@@ -20,16 +20,15 @@ const multerOptions = {
   // read the file into memory
   storage: multer.memoryStorage(),
   // check it is a suitable filetype
-  fileFilter: function(req, file, next) {
+  fileFilter(req, file, next) {
     const isPhoto = file.mimetype.startsWith('/image');
     if(isPhoto) {
+      console.log('Is a photo');
       next(null, true);
     } else {
-      next({ message: 'That filetype isn\'t allowed!'}, false);
+      next({ message: 'That filetype isnt allowed!'}, false);
     }
   }
-  // Types of files allowed
-
 };
 
 // [router.get('/', tweetController.getHome)]
@@ -69,21 +68,22 @@ exports.addNew = async (req, res) => {
 exports.upload = multer(multerOptions).single('photo');
 
 // Middleware to resize images
-exports.resize = async (req, res, next) => {
-  console.log('debug')
-  // if there is no file to resize
-  if( !req.file) {
-    next(); //move on
-    console.log('whoops!')
-    return;
-  } 
-  console.log('here');
-  console.log(req.file);
-}
+// exports.resize = async (req, res, next) => {
+//   console.log('debug')
+//   // if there is no file to resize
+//   if( !req.file) {
+//     next(); //move on
+//     console.log('whoops!')
+//     return;
+//   } 
+//   console.log('here');
+//   console.log(req.file);
+// }
 
 
 // [router.post('/tweet/add', tweetController.saveTweet);]
 exports.saveTweet = async (req, res) => {
+  console.log('here');
   const tweetbody = req.body;
   tweetbody.created_at = formatISO(new Date());
   tweetbody.img = '/images/twit_user/alex_400x400.jpg';
