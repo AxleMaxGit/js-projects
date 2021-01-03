@@ -1,61 +1,67 @@
 mixin tweetForm(tweet = {})
   
   form(action="/tweet/add" method="POST" class="tweet" enctype="multipart/form-data")
-
-    .rightalign
     
-      textarea.tweetinput(
-        name='text' 
-        id='textarea' 
-        maxlength="300" 
-        placeholder='What\'s happening?'
-      )
+    textarea.tweetinput(
+      name='tweet_text' 
+      id='textarea' 
+      maxlength="300" 
+      placeholder='What\'s happening?'
+    )
 
-      //- replace with user ID once implemented
-      input(
-        type='hidden' 
-        name='username' 
-        value='thealexfreeman'
-      )
+    //- replace with user ID once implemented
+    input(
+      type='hidden' 
+      name='username' 
+      value='thealexfreeman'
+    )
 
-      //- !! use serverside val in controller as well
-      label(for="photo") Photo
-        input(
-          type="file" 
-          name="photo" 
-          id="photo" 
-          accept="image/gif, image/jpeg, image/png"
-          )
-        if tweet.photo
-          img(width=200 src=`uploads/${tweet.photo}`)  
+    //- hide the button and use image instead 
+
+    label(for="photo")
+      img.icon(
+        src='/images/icons/upimg.png'
+        ) 
 
       input(
-        type="submit" 
-        id="button" 
-        value="Send It" 
-        class="button butOff"
-        disabled = true
-      )
+        type="file" 
+        margin-left="auto"
+        class="hidebutton"
+        name="photo" 
+        id="photo" 
+        accept="image/gif, image/jpeg, image/png"
+        )
 
-      script.
-        // Get the elements to be checked and altered
-        var btn = document.getElementById('button');
-        var inpt = document.getElementById('textarea');
-    
-        // Listen for changes
-        inpt.addEventListener("input", function(){
-          // when text is present
-          if (this.value != '') {
-            // Enable the button
-            btn.disabled = false;
-            // Make it look enabled
-            btn.classList.remove('butOff');
-          } 
-          else {
-            // When text is not present
-            // Disable the button
-            btn.disabled = true;
-            // Make it look disabled
-            btn.classList.add('butOff');
-          }
-        })
+    if tweet.photo
+      img(width=300 src=`uploads/${tweet.photo}`)  
+
+    input.rhs(
+      type="submit" 
+      id="button" 
+      value="Send It" 
+      class="button butOff"
+      disabled = true
+    )
+
+    script.
+      // Get the elements to be checked and altered
+      var btn = document.getElementById('button');
+      var inpt = document.getElementById('textarea');
+  
+      // Listen for changes
+      inpt.addEventListener("input", function(){
+        // when text is present
+        if (this.value != '') {
+          // Enable the button
+          btn.disabled = false;
+          // Make it look enabled
+          btn.classList.remove('butOff');
+        } 
+        else {
+          // When text is not present
+          // Disable the button
+          btn.disabled = true;
+          // Make it look disabled
+          btn.classList.add('butOff');
+        }
+      })

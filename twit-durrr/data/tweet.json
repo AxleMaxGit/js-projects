@@ -1,51 +1,73 @@
 [
   {
+    "tweet_text": "this is a tweet",
     "username": "thealexfreeman",
-    "text": "this is a tweet",
-    "img": "/images/twit_user/alex_400x400.jpg",
-    "tweet_id": 123451,
+    "user_profile_img": "/images/twit_user/alex_400x400.jpg",
+    "tweet_img": "",
     "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
   },
   {
     "username": "albericie",
-    "text": "Getting older. I used to be able to run a 4-minute mile, bench press 380 pounds, and tell the truth.",
-    "img": "/images/twit_user/emma_400x400.jpg",
-    "tweet_id": 123452,
+    "user_profile_img": "/images/twit_user/emma_400x400.jpg",
+    "tweet_text": "Getting older. I used to be able to run a 4-minute mile, bench press 380 pounds, and tell the truth.",
+    "tweet_img": "",
     "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
   },
   {
     "username": "thealexfreeman",
-    "text": "I call my nipples The Godfather because no one is interested in seeing the third one",
+    "user_profile_img": "/images/twit_user/alex_400x400.jpg",
+    "tweet_text": "I call my nipples The Godfather because no one is interested in seeing the third one",
     "img": "/images/twit_user/alex_400x400.jpg",
-    "tweet_id": 123453,
+    "tweet_img": "",
     "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
   },
   {
     "username": "thealexfreeman",
-    "text": "Me: i have a headache..  WebMD: and it’ll be your last",
-    "img": "/images/twit_user/alex_400x400.jpg",
-    "tweet_id": 123454,
+    "user_profile_img": "/images/twit_user/alex_400x400.jpg",
+    "tweet_text": "Me: i have a headache..  WebMD: and it’ll be your last",
+    "tweet_img": "",
     "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
   },
   {
     "username": "oscarfreeman",
-    "text": "i love sleepovers",
-    "img": "/images/twit_user/david_400x400.jpg",
-    "tweet_id": 123455,
+    "user_profile_img": "/images/twit_user/david_400x400.jpg",
+    "tweet_text": "i love sleepovers",
+    "tweet_img": "",
     "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
   },
   {
     "username": "oscarfreeman",
-    "text": "school is awesome",
-    "img": "/images/twit_user/david_400x400.jpg",
-    "tweet_id": 123456,
+    "user_profile_img": "/images/twit_user/david_400x400.jpg",
+    "tweet_text": "school is awesome",
+    "tweet_img": "",
     "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
   },
   {
     "username": "clarefreeman",
-    "text": "Friends is the best!",
-    "img": "/images/twit_user/alice_400x400.jpg",
-    "tweet_id": 123457,
+    "user_profile_img": "/images/twit_user/alice_400x400.jpg",
+    "tweet_text": "Friends is the best!",
+    "tweet_img": "",
     "created_at": "Mon Dec 28 2020 13:30:43 GMT+1000"
+  },
+  {
+    "tweet_text": "The two most important days in your life are the day you are born and the day you find out why. —Mark Twain",
+    "username": "thealexfreeman",
+    "user_profile_img": "/images/twit_user/alex_400x400.jpg",
+    "tweet_img": "/uploads/51f9b9a8-2ccd-43c2-a2d5-ca564f1ace19.jpeg",
+    "created_at": "2021-01-03T17:27:20+10:00"
+  },
+  {
+    "tweet_text": "2021 is going to be awesome!",
+    "username": "thealexfreeman",
+    "user_profile_img": "/images/twit_user/alex_400x400.jpg",
+    "tweet_img": "/uploads/4861e2ed-620d-4333-9dcf-76626e30b9e4.jpeg",
+    "created_at": "2021-01-03T17:27:20+10:00"
+  },
+  {
+    "tweet_text": "school is awesome",
+    "username": "oscarfreeman",
+    "user_profile_img": "/images/twit_user/david_400x400.jpg",
+    "tweet_img": "/uploads/4f353388-c7aa-4356-889c-5c04152289e5.jpeg",
+    "created_at": "2021-01-03T17:27:20+10:00"
   }
 ]

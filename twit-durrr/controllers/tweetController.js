@@ -74,21 +74,31 @@ exports.resize = async (req, res, next) => {
   // if there is no file to resize
   if( !req.file) {
     next(); //move on
-    console.log('no file selected')
+    console.log('no file selected');
     return;
   } 
-  console.log(req.file);
+  // console.log(req.file);
+  console.log(req.body);
+  const extension = req.file.mimetype.split('/')[1];
+  req.body.photo = `${uuid.v4()}.${extension}`;
+  const photo = await jimp.read(req.file.buffer);
+  await photo.resize(300, jimp.AUTO);
+  await photo.write(`./public/uploads/${req.body.photo}`);
+  next();
 }
 
 // [router.post('/tweet/add', tweetController.saveTweet);]
-exports.saveTweet = async (req, res) => {
+exports.saveTweet = (req, res) => {
+  // contains tweet_text & username
   const tweetbody = req.body;
+  // add user avatar
+  tweetbody.user_profile_img = '/images/twit_user/alex_400x400.jpg';
+
+  // add DTG to tweet
   tweetbody.created_at = formatISO(new Date());
-  tweetbody.img = '/images/twit_user/alex_400x400.jpg';
+
+  tweetbody.tweet_img = `/uploads/${req.body.photo}`;
   console.log(tweetbody);
   Tweet.insertMany(tweetbody);
   res.redirect('/');
 };
-
-
-

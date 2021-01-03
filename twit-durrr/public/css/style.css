@@ -71,11 +71,10 @@ h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
 .tweetcol {
   display: grid;
   grid-gap: 5px;
-  grid-template-rows: 50px 210px minmax(200px, 1fr);
+  grid-template-rows: 50px 150px minmax(200px, 1fr);
   background-color: #f7f7f7;
 
 }
-
 
 .twocol {
   display: grid;
@@ -120,6 +119,13 @@ h1, h2, h3, h4, h5, h6 { margin: 0 0 5px 0; }
 
 }
 
+.navheader {
+  background-color:#ddd;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0px);
+}
+
 /* anchors to look like buttons */
 a.button, .button{
   /* Style Font */
@@ -133,9 +139,15 @@ a.button, .button{
   border-radius: 25px;
   border: 2px solid rgb(0, 166, 255, 0.6);
   /* Position the button */
-  padding: 10px 20px 10px 20px;
-  margin: 5px 10px 5px 10px;
+  /* padding: 10px 20px 10px 20px;
+  margin: 5px 10px 5px 10px; */
 }
+
+.rhs {
+  position: relative;
+  bottom: 10px;
+  left: 320px;
+  }
 
 .tweetlink {
   text-decoration: none;
@@ -176,11 +188,9 @@ p {
   margin-bottom: 0 ;
 }
 
-
-
 .tweetinput {
   width:520px;
-  height: 135px;
+  height: 100px;
   resize: none;
   margin-top: 5px;
   font-size: 18px;
@@ -194,4 +204,15 @@ p {
 textarea:focus {
   outline: none !important;
   border:0px;
+}
+
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+
+input.hidebutton {
+  display: none;
 }

@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const tweetSchema = new mongoose.Schema({
+    tweet_text : { type: String },
     username : { type: String },
-    text : { type: String },
-    img : { type: String },
-    tweet_id : { type: Number },
+    user_profile_img : { type: String },
+    tweet_img : { type: String },
     created_at : { type: String}
 });
 
