@@ -12,23 +12,12 @@ const uuid = require('uuid');
 const format = require('date-fns/format');
 const formatISO = require('date-fns/formatISO');
 
+
 // Compile models from schema
 const Menu = mongoose.model('Menu');
 const Tweet = mongoose.model('Tweet');
 
-const multerOptions = {
-  // read the file into memory
-  storage: multer.memoryStorage(),
-  // check it is a suitable filetype
-  fileFilter(req, file, next) {
-    const isPhoto = file.mimetype.startsWith('/image');
-    if(isPhoto) {
-      next(null, true);
-    } else {
-      next({ message: 'That filetype isnt allowed!'}, false);
-    }
-  }
-};
+// ##### ROUTES  #####  //
 
 // [router.get('/', tweetController.getHome)]
 exports.getHome = async (req, res) => {
@@ -62,19 +51,32 @@ exports.addNew = async (req, res) => {
   res.redirect('/');
 };
 
+const multerOptions = {
+  // read the file into memory
+  storage: multer.memoryStorage(),
+  // check it is a suitable filetype
+  fileFilter(req, file, next) {
+    const isPhoto = file.mimetype.startsWith('image/');
+    console.log(isPhoto);
+    if(isPhoto) {
+      next(null, true);
+    } else {
+      next({ message: 'That filetype isnt allowed!'}, false);
+    }
+  }
+};
+
 // Middleware to handle image file upload in tweeet
 exports.upload = multer(multerOptions).single('photo');
 
 //Middleware to resize images
 exports.resize = async (req, res, next) => {
-  console.log('debug')
   // if there is no file to resize
   if( !req.file) {
     next(); //move on
     console.log('no file selected')
     return;
   } 
-  console.log('file selected');
   console.log(req.file);
 }
 
@@ -87,11 +89,6 @@ exports.saveTweet = async (req, res) => {
   Tweet.insertMany(tweetbody);
   res.redirect('/');
 };
-
-
-
-
-
 
 
 

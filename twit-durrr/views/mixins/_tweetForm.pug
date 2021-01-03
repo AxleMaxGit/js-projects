@@ -18,13 +18,14 @@ mixin tweetForm(tweet = {})
         value='thealexfreeman'
       )
 
-      //- cosmetic filter [can be bypasssed] using serverside val in controller as well
+      //- !! use serverside val in controller as well
       label(for="photo") Photo
         input(
           type="file" 
           name="photo" 
           id="photo" 
-          accept="image/gif, image/jpeg, image/png")
+          accept="image/gif, image/jpeg, image/png"
+          )
         if tweet.photo
           img(width=200 src=`uploads/${tweet.photo}`)  
 
