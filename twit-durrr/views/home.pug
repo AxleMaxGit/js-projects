@@ -3,31 +3,31 @@ extends pageframe
 block menu
   <!-- Menu Column--> 
   .col.stretchalign
-    include mixins/_menu
-    +menu()
+      include mixins/_menu
+      +menu()
 
 block content
   <!-- Main Column--> 
-  .col
-    .tweetcol
-      <!-- Navbar-->
-      .item.box.navheader
-        h2 #{title}
+  .col.tweetcol
 
-      <!-- Tweets Input Box-->
-      include mixins/_tweetForm
+    <!-- Navbar-->
+    .item.box.navheader
+      h2 #{title}
 
-      .twocol.box
-        .item
-          img.profile(src='/images/twit_user/alex_400x400.jpg') 
+    <!-- Tweets Input Box-->
+    include mixins/_tweetForm
+
+    .twocol.box
+      .item
+        img.profile(src='/images/twit_user/alex_400x400.jpg') 
+      
+      .item
+        +tweetForm()
         
-        .item
-          +tweetForm()
-          
-      <!-- Main Tweet Feed-->
-      .box
-        include mixins/_feed
-        +feed()
+    <!-- Main Tweet Feed-->
+    .box
+      include mixins/_feed
+      +feed()
 
 
 
